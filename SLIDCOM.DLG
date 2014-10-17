@@ -1,0 +1,78 @@
+DLGINCLUDE 1 "SLIDDLG.H"
+
+DLGTEMPLATE IDD_PORT_SELECT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Comm Selection", IDD_PORT_SELECT, 103, 88, 160, 63, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        AUTORADIOBUTTON "  COM1", IDC_COMM1_SELECT, 11, 43, 62, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "  COM2", IDC_COMM2_SELECT, 11, 30, 50, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "  COM3", IDC_COMM3_SELECT, 11, 18, 57, 10, 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "  COM4", IDC_COMM4_SELECT, 11, 6, 59, 10, 
+                        WS_TABSTOP
+        PUSHBUTTON      "CANCEL", DID_CANCEL, 69, 5, 40, 14
+        PUSHBUTTON      "OK", DID_OK, 115, 5, 40, 14
+    END
+END
+
+DLGTEMPLATE IDD_PORT_INIT LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Comm Selection", IDD_PORT_INIT, 10, 64, 217, 98, WS_VISIBLE, 
+            FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        PUSHBUTTON      "CANCEL", DID_CANCEL, 49, 5, 40, 14, WS_GROUP
+        PUSHBUTTON      "OK", DID_OK, 103, 5, 40, 14
+        AUTORADIOBUTTON "5", IDC_DATA_BIT5, 67, 71, 39, 10, WS_GROUP | 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "6", IDC_DATA_BIT6, 67, 61, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "7", IDC_DATA_BIT7, 67, 51, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "8", IDC_DATA_BIT8, 67, 41, 39, 10, WS_TABSTOP
+        LTEXT           "Bit Rate", 501, 3, 85, 51, 8
+        LTEXT           "Data Bits", 502, 60, 85, 43, 8
+        AUTORADIOBUTTON "No", IDC_PARITY_NO, 114, 72, 39, 10, WS_GROUP | 
+                        WS_TABSTOP
+        AUTORADIOBUTTON "Odd", IDC_PARITY_ODD, 114, 62, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Even", IDC_PARITY_EVEN, 114, 52, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Mark", IDC_PARITY_MARK, 114, 42, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "Space", IDC_PARITY_SPACE, 114, 32, 39, 10, 
+                        WS_TABSTOP
+        LTEXT           "Parity", 505, 114, 85, 45, 8
+        AUTORADIOBUTTON "1", IDC_STOP_BIT1, 176, 71, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "1.5", IDC_STOP_BIT1_5, 176, 61, 39, 10, WS_TABSTOP
+        AUTORADIOBUTTON "2", IDC_STOP_BIT2, 176, 51, 39, 10, WS_TABSTOP
+        LTEXT           "Stop Bits", 507, 164, 85, 52, 8
+        CONTROL         "", IDC_SET_BIT_RATE, 1, 66, 48, 12, WC_SPINBUTTON, 
+                        SPBS_ALLCHARACTERS | SPBS_READONLY | SPBS_MASTER | 
+                        SPBS_SERVANT | SPBS_JUSTDEFAULT | WS_GROUP | 
+                        WS_TABSTOP | WS_VISIBLE
+        CONTROL         "", 503, 2, 82, 49, 3, WC_STATIC, SS_FGNDRECT | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", 504, 59, 82, 37, 3, WC_STATIC, SS_FGNDRECT | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", 506, 107, 82, 37, 3, WC_STATIC, SS_FGNDRECT | 
+                        WS_GROUP | WS_VISIBLE
+        CONTROL         "", 508, 163, 82, 37, 3, WC_STATIC, SS_FGNDRECT | 
+                        WS_GROUP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE IDD_SLIDER_CONTROL LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Slider for COM Ports", IDD_SLIDER_CONTROL, 20, 61, 305, 73, 
+            WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+    BEGIN
+        CONTROL         "", IDC_SLIDER_CONTROL, 1, 25, 249, 36, WC_SLIDER, 
+                        SLS_HORIZONTAL | SLS_CENTER | SLS_SNAPTOINCREMENT | 
+                        SLS_BUTTONSTOP | SLS_RIBBONSTRIP | SLS_HOMELEFT | 
+                        SLS_PRIMARYSCALE1 | WS_GROUP | WS_TABSTOP | 
+                        WS_VISIBLE
+                        CTLDATA 12, 0, 151, 0, 0, 0
+        PUSHBUTTON      "OK", DID_OK, 61, 3, 40, 14
+        PUSHBUTTON      "Set MidPoint", IDC_MID_POINT, 131, 3, 71, 14
+        ENTRYFIELD      "", IDC_SLIDER_DATA, 267, 38, 22, 8, ES_MARGIN | 
+                        ES_READONLY
+    END
+END

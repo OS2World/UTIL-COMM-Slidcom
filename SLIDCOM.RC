@@ -1,0 +1,64 @@
+/*************************************************************************
+
+*************************************************************************/
+#include <os2.h>
+#include "sliddlg.h" 
+
+
+ICON IDR_WIN1_ICON wnd_ico1.ico
+
+
+/*************************************************************************
+
+*************************************************************************/
+MENU IDR_MAIN_MENU_WIN1
+{
+  SUBMENU     "~Select Com Port",    IDM_PORT_SELECTION,   MIS_TEXT
+  {
+  }
+  SUBMENU     "~Init Com Port",    IDM_PORT_INIT,   MIS_TEXT
+  {
+  }
+
+  SUBMENU     "~Slider Control",    IDM_SLIDER_CONTROL,   MIS_TEXT
+  {
+
+  }
+}
+
+
+
+ACCELTABLE IDR_MAIN_MENU_WIN1
+{
+   VK_F3,          IDM_DCB,           VIRTUALKEY
+   VK_BACKSPACE,   IDM_DCB,       VIRTUALKEY,    ALT
+   VK_DELETE,      IDM_DCB,        VIRTUALKEY,    SHIFT
+}
+
+
+
+
+
+/*************************************************************************
+                   S T R I N G   D E F I N I T I O N S
+*************************************************************************/
+STRINGTABLE
+{
+   IDS_CLIENT1CLASS        "Slider Control for Serial Devices"
+
+}
+
+/*************************************************************************
+                   M E S S A G E   D E F I N I T I O N S
+*************************************************************************/
+MESSAGETABLE
+{
+   IDMSG_INITFAILED            "Initalization failed."
+   IDMSG_CANNOTLOADEXITLIST    "Cannot load Exit List processor."
+   IDMSG_TEST                  "Message Box Test Message"
+   IDMSG_WINDLGFLAGS1          "Failed to create Dlg Box Flags1"
+   IDMSG_NOCOMMPORTSELECTED     "No Comm Port has been selected"
+}
+
+
+rcinclude slidcom.dlg

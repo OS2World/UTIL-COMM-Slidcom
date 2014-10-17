@@ -1,0 +1,50 @@
+# IBM Developer's Workframe/2 Make File Creation run at 19:51:43 on 02/02/93
+
+# Make File Creation run in directory:
+#   C:\OSII\SLIDCOM;
+
+# Assumed INCLUDE environment variable path:
+#   C:\IBMC\INCLUDE;
+#   C:\TOOLKT20\C\OS2H;
+#   C:\TOOLKT20\ASM\OS2INC;
+
+
+SLIDCOM.RES:  SLIDCOM.RC  \
+#  {.;$(INCLUDE)}OS2.H  \
+   {.;$(INCLUDE)}SLIDDLG.H  \
+   WND_ICO1.ICO  \
+   SLIDCOM.DLG  \
+     SLIDDLG.H  \
+   SLIDCOM.MAK
+
+PMCOMDRV.OBJ:  PMCOMDRV.C  \
+#  {$(INCLUDE);}os2.h  \
+#  {$(INCLUDE);}process.h  \
+#  {$(INCLUDE);}conio.h  \
+#  {$(INCLUDE);}stdio.h  \
+#  {$(INCLUDE);}stdlib.h  \
+#  {$(INCLUDE);}stddef.h  \
+#  {$(INCLUDE);}string.h  \
+   {.;$(INCLUDE);}protype.h  \
+   {.;$(INCLUDE);}sliddlg.h  \
+   {.;$(INCLUDE);}extern.h  \
+   SLIDCOM.MAK
+
+SLIDCOM.OBJ:  SLIDCOM.C  \
+#  {$(INCLUDE);}os2.h  \
+   {.;$(INCLUDE);}protype.h  \
+   {.;$(INCLUDE);}sliddlg.h  \
+   SLIDCOM.MAK
+
+SLIDDLG.OBJ:  SLIDDLG.C  \
+#  {$(INCLUDE);}os2.h  \
+#  {$(INCLUDE);}process.h  \
+#  {$(INCLUDE);}conio.h  \
+#  {$(INCLUDE);}stdio.h  \
+#  {$(INCLUDE);}stdlib.h  \
+#  {$(INCLUDE);}stddef.h  \
+#  {$(INCLUDE);}string.h  \
+   {.;$(INCLUDE);}protype.h  \
+   {.;$(INCLUDE);}sliddlg.h  \
+   {.;$(INCLUDE);}extern.h  \
+   SLIDCOM.MAK
